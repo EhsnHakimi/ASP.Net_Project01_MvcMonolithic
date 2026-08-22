@@ -1,6 +1,8 @@
 using FullScaffold.Models;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("ProjectDbContext") ?? throw new InvalidOperationException("Connection string 'ProjectDbContext' not found.");
 builder.Services.AddDbContext<ProjectDbContext>();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
