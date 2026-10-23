@@ -1,7 +1,16 @@
 
+using MvcMonolithic.Models;
+using MvcMonolithic.Models.Services.Contract;
+using MvcMonolithic.ApplicationServices;
+using MvcMonolithic.ApplicationServices.Contract;
+using MvcMonolithic.Models.Services.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddDbContext<ProjectDbContext>();
+builder.Services.AddScoped<IPersonRepository, PersonRepository>();
+builder.Services.AddScoped<IPersonApplicationService, PersonApplicationService>();
+//Add services to the container.
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

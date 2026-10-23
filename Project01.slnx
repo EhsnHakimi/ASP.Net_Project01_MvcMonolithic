@@ -1,4 +1,0 @@
-<Solution>
-  <Project Path="FullScaffold/FullScaffold.csproj" />
-  <Project Path="MvcMonolithic/MvcMonolithic.csproj" />
-</Solution>

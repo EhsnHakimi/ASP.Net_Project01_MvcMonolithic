@@ -1,0 +1,29 @@
+﻿@model MvcMonolithic.ApplicationServices.Dto.GetPersonDto
+
+@{
+    ViewData["Title"] = "Person Details";
+}
+
+<h1>Person Details</h1>
+
+<div>
+    <p>
+        <strong>ID:</strong>
+        @Model.Id
+    </p>
+
+    ```
+    <p>
+        <strong>First Name:</strong>
+        @Model.FirstName
+    </p>
+
+    <p>
+        <strong>Last Name :</strong>
+        @Model.LastName
+    </p>
+    ```
+
+</div>
+
+<a asp-controller="Person" asp-action="Index">Return To Index</a>

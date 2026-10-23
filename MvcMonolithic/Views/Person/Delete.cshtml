@@ -1,0 +1,49 @@
+﻿@model MvcMonolithic.ApplicationServices.Dto.DeletePersonDto
+
+@{
+    ViewData["Title"] = "Delete Person";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header bg-danger text-white">
+                    <h4 class="mb-0">Delete Person Acceptation</h4>
+                </div>
+
+                ```
+                <div class="card-body">
+                    <p class="text-danger">
+                       Are You Sure For Delete?
+                    </p>
+
+                    <dl class="row">
+                        <dt class="col-sm-4">ID</dt>
+                        <dd class="col-sm-8">@Model.Id</dd>
+
+                        <dt class="col-sm-4">First Name</dt>
+                        <dd class="col-sm-8">@Model.FirstName</dd>
+
+                        <dt class="col-sm-4">Last Name</dt>
+                        <dd class="col-sm-8">@Model.LastName</dd>
+                    </dl>
+
+                    <form asp-action="Delete" method="post">
+                        <input type="hidden" asp-for="Id" />
+
+                        <button type="submit" class="btn btn-danger">
+                            Yes,Delete
+                        </button>
+
+                        <a asp-action="Index" class="btn btn-secondary">
+                            Cancel
+                        </a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    ```
+
+</div>
