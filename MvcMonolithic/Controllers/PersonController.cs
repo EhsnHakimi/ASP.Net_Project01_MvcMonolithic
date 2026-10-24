@@ -15,14 +15,14 @@ namespace MvcMonolithic.Controllers
         } 
         #endregion
 
-        #region [- Create(*) -]
+        #region [- Create() -]
         public IActionResult Create()
         {
             return View();
         }
         #endregion
 
-        #region [- CreatePost(*) -]
+        #region [- CreatePost() -]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(PostPersonDto postPersonDto)
@@ -42,7 +42,7 @@ namespace MvcMonolithic.Controllers
         } 
         #endregion
 
-        #region [- ReadIndex(*) -]
+        #region [- ReadIndex() -]
         public async Task<IActionResult> Index()
         {
             var result = await _personApplicationService.GetAllPerson();
@@ -50,7 +50,7 @@ namespace MvcMonolithic.Controllers
         }
         #endregion
 
-        #region [- ReadDetails(*) -]
+        #region [- ReadDetails() -]
         public async Task<IActionResult> Details(int? id)
         {
             if (id is null || id <= 0)
@@ -62,11 +62,10 @@ namespace MvcMonolithic.Controllers
                 return NotFound();
 
             return View(person);
-        } 
+        }
         #endregion
 
-        #region [- Update(*) -]
-
+        #region [- Update() -]
         public async Task<IActionResult> Update(int? id)
         {
             if (id is null || id <= 0)
@@ -85,11 +84,10 @@ namespace MvcMonolithic.Controllers
             };
 
             return View(updatePersonDto);
-        }
-
+        } 
         #endregion
 
-        #region [- UpdatePost(*) -]
+        #region [- UpdatePost() -]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Update(UpdatePersonDto updatePersonDto)
@@ -108,7 +106,7 @@ namespace MvcMonolithic.Controllers
         } 
         #endregion
 
-        #region [- Delete(*) -]
+        #region [- Delete() -]
 
         public async Task<IActionResult> Delete(int? id)
         {
@@ -132,7 +130,7 @@ namespace MvcMonolithic.Controllers
 
         #endregion
 
-        #region [- DeletePost(*) -]
+        #region [- DeletePost() -]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(DeletePersonDto deletePersonDto)

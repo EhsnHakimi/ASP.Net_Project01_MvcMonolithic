@@ -8,14 +8,14 @@ namespace MvcMonolithic.Models.Services.Repositories
     {
         private readonly ProjectDbContext _projectDbContext;
 
-        #region [- ctor(*) -]
+        #region [- ctor() -]
         public PersonRepository(ProjectDbContext projectDbContext)
         {
             _projectDbContext = projectDbContext;
         } 
         #endregion
 
-        #region [- CreateInsert(*) -]
+        #region [- CreateInsert() -]
         public async Task insert(Person person)
         {
             try
@@ -32,7 +32,7 @@ namespace MvcMonolithic.Models.Services.Repositories
         } 
         #endregion
 
-        #region [- ReadSelectAll(*) -]
+        #region [- ReadSelectAll() -]
         public async Task<IEnumerable<Person>> SelectAll()
         {
             try
@@ -48,7 +48,7 @@ namespace MvcMonolithic.Models.Services.Repositories
         }
         #endregion
 
-        #region [- ReadSelectById(*) -]
+        #region [- ReadSelectById() -]
         public async Task<Person?> SelectByIdAsync(int id)
         {
             if (id <= 0)
@@ -60,7 +60,7 @@ namespace MvcMonolithic.Models.Services.Repositories
         }
         #endregion
 
-        #region [- Update(*) -]
+        #region [- Update() -]
         public async Task<Person> UpdateAsync(Person person)
         {
             var updatePerson = await _projectDbContext.People
@@ -79,7 +79,7 @@ namespace MvcMonolithic.Models.Services.Repositories
         }
         #endregion
 
-        #region [- Delete(*) -]
+        #region [- Delete() -]
 
         public async Task DeleteAsync(int id)
         {

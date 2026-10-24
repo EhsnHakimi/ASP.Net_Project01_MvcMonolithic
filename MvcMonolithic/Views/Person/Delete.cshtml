@@ -8,11 +8,10 @@
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card shadow-sm">
-                <div class="card-header bg-danger text-white">
-                    <h4 class="mb-0">Delete Person Acceptation</h4>
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Delete Person Acceptation </h4>
                 </div>
 
-                ```
                 <div class="card-body">
                     <p class="text-danger">
                        Are You Sure For Delete?
@@ -32,13 +31,15 @@
                     <form asp-action="Delete" method="post">
                         <input type="hidden" asp-for="Id" />
 
-                        <button type="submit" class="btn btn-danger">
-                            Yes,Delete
-                        </button>
+                        <div class="d-flex justify-content-between">
+                            <button type="submit" class="btn btn-danger">
+                                Yes,Delete
+                            </button>
 
-                        <a asp-action="Index" class="btn btn-secondary">
-                            Cancel
-                        </a>
+                            <a asp-action="Index" class="btn btn-secondary">
+                                Cancel and Return
+                            </a>
+                        </div>
                     </form>
                 </div>
             </div>

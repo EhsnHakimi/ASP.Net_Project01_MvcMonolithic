@@ -16,7 +16,7 @@ namespace MvcMonolithic.ApplicationServices
         }  
         #endregion
 
-        #region [- CreatePost(*) -]
+        #region [- CreatePost() -]
         public async Task Post(PostPersonDto postPersonDto)
         {
             var person = new Models.DomainModel.PersonAggregates.Person()
@@ -28,7 +28,7 @@ namespace MvcMonolithic.ApplicationServices
         } 
         #endregion
 
-        #region [- ReadGetAllPerson(*) -]
+        #region [- ReadGetAllPerson() -]
         public async Task<List<GetPersonDto>> GetAllPerson()
         {
             var persons = await _personRepository.SelectAll();
@@ -51,7 +51,7 @@ namespace MvcMonolithic.ApplicationServices
 
         #endregion
 
-        #region [- ReadGetPersonByID(*) -]
+        #region [- ReadGetPersonByID() -]
         public async Task<GetPersonDto?> GetPersonById(int id)
         {
             if (id <= 0)
@@ -73,7 +73,7 @@ namespace MvcMonolithic.ApplicationServices
         }
         #endregion
 
-        #region [- Update(*) -]
+        #region [- Update() -]
         public async Task Update(UpdatePersonDto updatePersonDto)
         {
             if (updatePersonDto.Id <= 0)
@@ -91,7 +91,7 @@ namespace MvcMonolithic.ApplicationServices
         }
         #endregion
 
-        #region [- Delete(*) -]
+        #region [- Delete() -]
 
         public async Task Delete(DeletePersonDto deletePersonDto)
         {
