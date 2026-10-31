@@ -1,0 +1,39 @@
+﻿@model MvcMonolithic.ApplicationServices.Dto.Product_Dtos.GetProductDto
+
+@{
+    ViewData["Title"] = "Product Details";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Product Details</h4>
+                </div>
+
+                <div class="card-body">
+
+                    <dl class="row">
+                        <dt class="col-sm-4">ID</dt>
+                        <dd class="col-sm-8">@Model.Id</dd>
+
+                        <dt class="col-sm-4">Title</dt>
+                        <dd class="col-sm-8">@Model.Title</dd>
+
+                        <dt class="col-sm-4">Unit Price</dt>
+                        <dd class="col-sm-8">@Model.UnitPrice</dd>
+                    </dl>
+
+                    <a asp-controller="Product"
+                       asp-action="Index"
+                       class="btn btn-secondary">
+                        Return To Index
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

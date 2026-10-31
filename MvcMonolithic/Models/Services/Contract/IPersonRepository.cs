@@ -19,6 +19,7 @@ namespace MvcMonolithic.Models.Services.Contract
         Task<Person> UpdateAsync(Person person);
 
         #endregion
+
         #region [- Delete() -]
         Task DeleteAsync(int id);
         #endregion

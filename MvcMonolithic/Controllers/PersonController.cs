@@ -76,7 +76,7 @@ namespace MvcMonolithic.Controllers
             if (person is null)
                 return NotFound();
 
-            var updatePersonDto = new UpdatePersonDto
+            var updatePersonDto = new PutPersonDto
             {
                 Id = person.Id,
                 FirstName = person.FirstName,
@@ -90,7 +90,7 @@ namespace MvcMonolithic.Controllers
         #region [- UpdatePost() -]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Update(UpdatePersonDto updatePersonDto)
+        public async Task<IActionResult> Update(PutPersonDto updatePersonDto)
         {
             if (!ModelState.IsValid)
                 return View(updatePersonDto);

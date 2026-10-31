@@ -1,0 +1,60 @@
+﻿@model MvcMonolithic.ApplicationServices.Dto.Product_Dtos.PostProductDto
+
+@{
+    ViewData["Title"] = "Add New Product";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Add New Product</h4>
+                </div>
+
+                <div class="card-body">
+                    <form asp-action="Create" method="post">
+
+                        <div asp-validation-summary="ModelOnly"
+                             class="text-danger mb-3"></div>
+
+                        <div class="mb-3">
+                            <label asp-for="Title" class="form-label"></label>
+                            <input asp-for="Title"
+                                   class="form-control"
+                                   placeholder="Enter Product Title" />
+                            <span asp-validation-for="Title"
+                                  class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="UnitPrice" class="form-label"></label>
+                            <input asp-for="UnitPrice"
+                                   class="form-control"
+                                   placeholder="Enter Unit Price" />
+                            <span asp-validation-for="UnitPrice"
+                                  class="text-danger"></span>
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                            <button type="submit" class="btn btn-success">
+                                Add
+                            </button>
+
+                            <a asp-action="Index" class="btn btn-secondary">
+                                Return To List
+                            </a>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

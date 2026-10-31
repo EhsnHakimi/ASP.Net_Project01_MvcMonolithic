@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using MvcMonolithic.Models;
+using MvcMonolithic.Models.Services;
 using System.Diagnostics;
 
 namespace MvcMonolithic.Controllers

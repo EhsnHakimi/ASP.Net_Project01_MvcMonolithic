@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using MvcMonolithic.Models;
+using MvcMonolithic.Models.Services;
 
 #nullable disable
 
@@ -42,7 +42,7 @@ namespace MvcMonolithic.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Person");
+                    b.ToTable("People");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,15 +1,16 @@
-
-using MvcMonolithic.Models;
 using MvcMonolithic.Models.Services.Contract;
 using MvcMonolithic.ApplicationServices;
 using MvcMonolithic.ApplicationServices.Contract;
 using MvcMonolithic.Models.Services.Repositories;
+using MvcMonolithic.Models.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<ProjectDbContext>();
 builder.Services.AddScoped<IPersonRepository, PersonRepository>();
 builder.Services.AddScoped<IPersonApplicationService, PersonApplicationService>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IProductApplicationService, ProductApplicationService>();
 //Add services to the container.
 builder.Services.AddControllersWithViews();
 

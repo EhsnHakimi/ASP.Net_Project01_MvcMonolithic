@@ -1,7 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MvcMonolithic.Models.DomainModel.PersonAggregates;
+using MvcMonolithic.Models.DomainModel.ProductAggregates;
 
-namespace MvcMonolithic.Models
+namespace MvcMonolithic.Models.Services
 {
     public class ProjectDbContext : DbContext
     {
@@ -17,5 +18,13 @@ namespace MvcMonolithic.Models
             }
         }
         public DbSet<Person> People { get; set; }
+        public DbSet<Product> Products { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Person>().ToTable("People");
+        }
     }
 }

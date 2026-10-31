@@ -1,4 +1,4 @@
-namespace MvcMonolithic.Models
+namespace MvcMonolithic.Models.Services
 {
     public class ErrorViewModel
     {

@@ -17,7 +17,7 @@ namespace MvcMonolithic.ApplicationServices.Contract
         #endregion
 
         #region [- Update() -]
-        Task Update(UpdatePersonDto updatePersonDto);
+        Task Update(PutPersonDto updatePersonDto);
         #endregion
 
         #region [- Delete() -]

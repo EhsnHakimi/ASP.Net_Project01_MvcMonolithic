@@ -74,7 +74,7 @@ namespace MvcMonolithic.ApplicationServices
         #endregion
 
         #region [- Update() -]
-        public async Task Update(UpdatePersonDto updatePersonDto)
+        public async Task Update(PutPersonDto updatePersonDto)
         {
             if (updatePersonDto.Id <= 0)
                 return;

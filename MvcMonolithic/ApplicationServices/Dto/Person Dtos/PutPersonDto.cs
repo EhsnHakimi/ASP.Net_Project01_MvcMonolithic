@@ -1,6 +1,6 @@
 ﻿namespace MvcMonolithic.ApplicationServices.Dto
 {
-    public class UpdatePersonDto
+    public class PutPersonDto
     {
         public int Id { get; set; }
         public string FirstName { get; set; }
